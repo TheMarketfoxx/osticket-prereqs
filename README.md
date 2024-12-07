@@ -3,12 +3,14 @@
 </p>
 
 <h1>osTicket - Prerequisites and Installation</h1>
-This tutorial outlines the prerequisites and installation of the open-source help desk ticketing system osTicket.<br />
+- ## This tutorial outlines the prerequisites and installation of the open-source help desk ticketing system osTicket.<br />
 
+<h2>How osTicket works for you</h2>
 
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: How To Install osTicket with Prerequisites](https://www.youtube.com)
+- ## Users create tickets via your website, email, or phone
+- ## Incoming tickets are saved and assigned to agents
+- ## Agents help your users resolve their issues
+- ## osTicket is an attractive alternative to higher-cost and complex customer support systems; simple, lightweight, reliable, open source, web-based and easy to setup and use. The best part is, it's completely free.
 
 <h2>Environments and Technologies Used</h2>
 
@@ -22,34 +24,23 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>List of Prerequisites</h2>
 
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
-
+HTTP server running Microsoft® IIS or Apache
+PHP version 8.1 - 8.2 (8.2 recommended)
+mysqli extension for PHP
+MySQL database version 5.5 (or greater)
 <h2>Installation Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+osTicket now supports bleeding-edge installations. The easiest way to install the software and track updates is to clone the public repository. Create a folder on you web server (using whatever method makes sense for you) and cd into it. Then clone the repository (the folder must be empty!):
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+git clone https://github.com/osTicket/osTicket
+And deploy the code into somewhere in your server's www root folder, for instance
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+cd osTicket
+php manage.php deploy --setup /var/www/htdocs/osticket/
+Then you can configure your server if necessary to serve that folder, and visit the page and install osTicket as usual. Go ahead and even delete setup/ folder out of the deployment location when you’re finished. Then, later, you can fetch updates and deploy them (from the folder where you cloned the git repo into)
+
+git pull
+php manage.php deploy -v /var/www/htdocs/osticket/
